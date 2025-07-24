@@ -35,7 +35,7 @@ The system includes the following entities:
 The schema follows 3NF normalization and includes all necessary primary and foreign key constraints.
 
 > 📎 ERD Diagram:  
-> ![ERD Diagram](https://drive.google.com/file/d/1kRrmrJ3bEca9OI_UhAvfXCyPLRL-Qst4/view?usp=sharing)
+> ![ERD Diagram](https://drive.google.com/uc?export=view&id=1kRrmrJ3bEca9OI_UhAvfXCyPLRL-Qst4)
 
 ---
 
