@@ -1,8 +1,7 @@
 # 🍔 GrabFood Database Project
 
 This project is a comprehensive relational database system designed for a food delivery platform inspired by GrabFood. It models real-world operations such as customer orders, restaurant listings, delivery tracking, payments, reviews, and service requests using SQL Server. I led the project as team leader, working alongside four talented team members to collaboratively design, implement, and document the entire system: 
-
-— Thuy Dung
+- Thuy Dung
 - Quoc Trinh
 - Thanh An
 -  Minh Dang
