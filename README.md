@@ -34,6 +34,27 @@ The system includes the following entities:
 
 The schema follows 3NF normalization and includes all necessary primary and foreign key constraints.
 
+This project features a well-structured relational database model for an online food delivery system, inspired by GrabFood. The E-R diagram illustrates how core entities interact to support customer ordering, restaurant management, driver logistics, and administrative operations.
+
+🧩 Key Components:
+Users: A central table with user credentials and type classification (Customer, Restaurant, or Driver), allowing polymorphic behavior across the system.
+
+Orders & Items:
+Customers can place multiple orders containing multiple items. The Order_Item bridge table captures quantities and pricing for each item in an order.
+
+Restaurants & Menus:
+Each restaurant manages its Menu_Items, which are categorized and linked to specific Cuisine Types, supporting rich menu filtering and display.
+
+Payments & Vouchers:
+Orders are tied to Payments and can apply Vouchers for discounts based on criteria like minimum order value and max discount caps.
+
+Reviews:
+Customers can leave Product Reviews on their orders, providing feedback tied directly to order IDs.
+
+Support & Admin:
+The schema includes support for platform-generated Reports, Customer Service tickets, and Employee records for internal operations.
+
+
 ![E-R model](https://drive.google.com/uc?export=view&id=13pq7y7lYUWL2tqN5Ww9lWekWw15fxdCK)
 
 
