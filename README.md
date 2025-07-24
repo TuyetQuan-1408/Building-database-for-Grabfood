@@ -1,77 +1,70 @@
-#  GrabFood Relational Database Project (SQL Server)
+# 🍔 GrabFood Database Project
 
-This academic project demonstrates the design and implementation of a relational database system for GrabFood — a food delivery service. The goal is to simulate real-world business logic using normalized database modeling and business-driven SQL queries.
-
----
-
-## 🎯 Objectives
-
-- Build a scalable and normalized relational schema that models GrabFood’s delivery, ordering, and payment workflows.
-- Support key business queries including revenue analytics, delivery performance, and customer behavior insights.
+This project is a comprehensive relational database system designed for a food delivery platform inspired by GrabFood. The goal is to model real-world operations such as customer orders, restaurant listings, delivery tracking, payments, reviews, and service requests using SQL Server.
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Project Overview
 
-- **RDBMS**: Microsoft SQL Server
-- **Tool**: SQL Server Management Studio (SSMS)
-- **Query Language**: T-SQL (Transact-SQL)
-- **Modeling**: ERD (Entity-Relationship Diagram), schema design
+- **Database Engine:** SQL Server  
+- **Diagrams Included:**
+  - Entity-Relationship (E-R) Model
+  - Entity-Relationship Diagram (ERD)
+  - Relational Schema (3.0)
+  - Normalized Tables in 3NF
 
----
-
-##  Database Schema
-
-The system includes the following entities:
-
-- `Customers`
-- `Restaurants`
-- `Dishes`
-- `Orders`
-- `OrderDetails`
-- `Payments`
-- `Deliveries`
-
-The schema follows 3NF normalization and includes all necessary primary and foreign key constraints.
-
-This project features a well-structured relational database model for an online food delivery system, inspired by GrabFood. The E-R diagram illustrates how core entities interact to support customer ordering, restaurant management, driver logistics, and administrative operations.
-
-🧩 Key Components:
-Users: A central table with user credentials and type classification (Customer, Restaurant, or Driver), allowing polymorphic behavior across the system.
-
-Orders & Items:
-Customers can place multiple orders containing multiple items. The Order_Item bridge table captures quantities and pricing for each item in an order.
-
-Restaurants & Menus:
-Each restaurant manages its Menu_Items, which are categorized and linked to specific Cuisine Types, supporting rich menu filtering and display.
-
-Payments & Vouchers:
-Orders are tied to Payments and can apply Vouchers for discounts based on criteria like minimum order value and max discount caps.
-
-Reviews:
-Customers can leave Product Reviews on their orders, providing feedback tied directly to order IDs.
-
-Support & Admin:
-The schema includes support for platform-generated Reports, Customer Service tickets, and Employee records for internal operations.
-
-
-![E-R model](https://drive.google.com/uc?export=view&id=13pq7y7lYUWL2tqN5Ww9lWekWw15fxdCK)
-
+This project was developed as part of a university-level Database Management course.
 
 ---
 
-## 📊 Example Business Queries
+## 📊 E-R Model
 
-- 🥡 Total revenue by restaurant and time period  
-- 🍽️ Most frequently ordered dishes  
-- ⏱️ Number of late deliveries per driver  
-- 💳 Top payment methods by region  
-- 📍 Average delivery distance by city
+![E-R Model](https://drive.google.com/uc?id=13pq7y7lYUWL2tqN5Ww9lWekWw15fxdCK)
 
-> ✅ Find these in: `/queries/sample_queries.sql`
+The E-R Model illustrates the high-level conceptual view of the system:
+- `Users` entity acts as a superclass for `Drivers`, `Customers`, and `Restaurants` (with `User_type` to distinguish).
+- `Order`, `Menu_Items`, `Payments`, `Product_Review`, and `Reports` capture the transactional and feedback aspects.
+- Relationships are clearly defined to ensure business rules such as “one customer can place many orders” or “one restaurant serves many menu items.”
 
 ---
 
-## 📁 Project Structure
+## 🧩 Entity-Relationship Diagram (ERD)
 
+![ERD](https://drive.google.com/uc?id=1Byo_KU9KKfHx3bo09JW2BleourUe4y48)
+
+This detailed ERD includes:
+- All primary and foreign keys,
+- Full attribute listing for each table,
+- Connections with clear cardinality and participation constraints,
+- Special attention to join tables like `Order_Item` and hierarchical structure in `Users`.
+
+---
+
+## 🔗 Relational Model (3.0)
+
+![Relational Model 3.0](https://drive.google.com/uc?id=1-LeuZxHOkqzdoOsQBsUloUn8Ve5EZnaX)
+
+In this logical schema:
+- Every relationship is mapped into a relation with foreign keys.
+- Naming conventions are consistent with E-R and ERD.
+- It bridges the conceptual model with physical database implementation.
+
+---
+
+## 📐 3NF Design
+
+![3NF Diagram](https://drive.google.com/uc?id=1T2mcgv7V_MMs888ZxO7BzJawaAxpiU0p)
+
+The schema is normalized to Third Normal Form (3NF):
+- Eliminates transitive and partial dependencies,
+- Enhances data integrity and reduces redundancy,
+- Ensures that each table contains only data that relates to a single topic.
+
+---
+
+## ✅ Key Features
+
+- ✅ Clear separation between `Users` and their roles (`Drivers`, `Restaurants`, `Customers`)
+- ✅ Supports real-world operations like reviews, payments, customer service tickets, and reports
+- ✅ Optimized for analytical reporting through well-structured schema
 
